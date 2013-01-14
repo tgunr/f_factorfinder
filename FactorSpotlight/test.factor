@@ -8,6 +8,8 @@ USING: accessors alien alien.accessors assocs io kernel math
 math.parser namespaces prettyprint sequences strings.parser
 vocabs.parser ;
 
+USE: extensions
+
 IN: vocabs
 : current-vocab-str ( -- str )
     current-vocab name>> ;
