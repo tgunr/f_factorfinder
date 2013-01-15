@@ -48,6 +48,15 @@ assertRegex(NSString * stringToSearch, NSString * regexString)
 	return [regex evaluateWithObject: stringToSearch];
 }
 
+NSString *squeeseString(NSString *string) {
+    NSString *squeezed = [string stringByReplacingOccurrencesOfString: @"\t" withString: @" "];
+    NSRange range;
+    range.location = 0;
+    range.length = [squeezed length];
+    squeezed = [squeezed stringByReplacingOccurrencesOfString:@"\\s+" withString:@" " options:NSRegularExpressionSearch range:range];
+    return squeezed;
+}
+
 /* -----------------------------------------------------------------------------
     Get metadata attributes from file
 
@@ -65,11 +74,10 @@ extract(void * thisInterface,
 	/* Return the attribute keys and attribute values in the dict */
 	/* Return TRUE if successful, FALSE if there was no data provided */
 
-	NSRange    range, theRange;
-	NSString    *version, *author, *description, *uses, *copyright;
+	NSRange           range, theRange;
+	NSString          *version, *author, *description, *uses, *copyright;
 	NSArray           * lineComponents;
 	NSArray           * lineSubComponents;
-	Boolean             success = NO; // found at least one attribute
 	NSMutableArray    * definitions = [NSMutableArray arrayWithCapacity: 128];
 	NSMutableArray    * usesArray = [NSMutableArray arrayWithCapacity: 128];
 	NSMutableString   * sourceContent = [NSMutableString stringWithCapacity: 4096];
@@ -77,15 +85,17 @@ extract(void * thisInterface,
     NSLog(@"FactorSpotlight: %@", pathToFile);
 
 	// Grab our plist for file extensions
-	NSBundle     * myBundle = [NSBundle bundleWithIdentifier: @"org.factorcode.Factor.spotlight"];
+	NSBundle     * myBundle = [NSBundle bundleWithIdentifier: @"org.factorcode.spotlight"];
 	NSDictionary * bundleDictionary = [myBundle infoDictionary];
 	NSArray      * myDocuentTypes = [bundleDictionary objectForKey: @"CFBundleDocumentTypes"];
 	NSDictionary * myDocuentTypesDictionary = [myDocuentTypes objectAtIndex: 0];
 	NSArray      * myFileExtensions = [myDocuentTypesDictionary objectForKey: @"CFBundleTypeExtensions"];
 
 	// Fallback option for testing
-	if ([myFileExtensions count] == 0)
-		myFileExtensions = [NSArray arrayWithObjects: @"factor", @"of", @"fs", @"fth", @"4th", @"fo", @"fas", nil];
+	if ([myFileExtensions count] == 0) {
+        PMLOG(1,@"Bundle extensions not found, using default");
+		myFileExtensions = [NSArray arrayWithObjects: @"factor", nil];
+    }
 
 	NSString * fileExtension = [pathToFile pathExtension];
 	NSString * extObject;
@@ -98,27 +108,29 @@ extract(void * thisInterface,
 	}
 
 	if (!extensionOK)
-        return success;
+        return NO;
     
 	NSStringEncoding fileEncoding;
 	NSError        * fileError = nil;
 	NSString * fileContent = [NSString stringWithContentsOfFile: pathToFile usedEncoding: &fileEncoding error: &fileError];
 	if (!fileContent)
-		return success;
+		return NO;
 
 	NSArray * fileLines = nil;
 	if (fileContent) {
+        // Format content
 		fileContent = [fileContent stringByReplacingOccurrencesOfString: @"\r" withString: @"\n"];
 		fileContent = [fileContent stringByReplacingOccurrencesOfString: @"\n\n" withString: @"\n"];
 		fileLines = [fileContent componentsSeparatedByString: @"\n"];
 	}
 
-	for (NSString * aString in fileLines) {
-//        PMLOG(1, @"Factor File line: %@", aString);
-
-        NSString *fileLine = aString;
+    NSUInteger fileLineCount = [fileLines count];
+    for (int i = 0; i < fileLineCount; i++) {
+        NSString *fileLine = squeeseString([fileLines objectAtIndex:i]);
 		range.location = 0;
 		range.length = [fileLine length];
+        //        PMLOG(1, @"Factor File line: %@", aString);
+        
 
 		// Look thu header lines to glean info
 		// Look for '! Copyright` in the line
@@ -131,7 +143,6 @@ extract(void * thisInterface,
 				copyright = [lineComponents objectAtIndex: 1];
                 [attributes setObject: copyright
                                forKey: (NSString *)kMDItemCopyright];
-					success = YES;
             }
         }
         // Look for a description tag
@@ -143,56 +154,72 @@ extract(void * thisInterface,
 				description = [lineComponents objectAtIndex: 1];
                 [attributes setObject: description
                                forKey: (NSString *)kMDItemDescription];
-                success = YES;
             }
         }
 
 		// Find the Version number, if any
-        theRange = [fileLine rangeOfString: @"Version:" options: NSLiteralSearch range: range];
+        theRange = [fileLine rangeOfString: @"! Version: " options: NSLiteralSearch range: range];
         if (theRange.location != NSNotFound) {
-            fileLine = [fileLine stringByReplacingOccurrencesOfString: @"\t" withString: @" "];
-            NSArray  * lineComponents = [fileLine componentsSeparatedByString: @" "];
-            NSString * version = [lineComponents objectAtIndex: 1];
+            NSArray  * lineComponents = [fileLine componentsSeparatedByString: @"Version: "];
+            version = [lineComponents objectAtIndex: 1];
             version = [version stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
             [attributes setObject: version
                            forKey: (NSString *)kMDItemVersion];
-            success = YES;
         }
         // Find the Directly Responsible Individual (DRI), if any
-        theRange = [fileLine rangeOfString: @"DRI:" options: NSLiteralSearch range: range];
+        theRange = [fileLine rangeOfString: @"! DRI: " options: NSLiteralSearch range: range];
         if (theRange.location != NSNotFound) {
-            fileLine = [fileLine stringByReplacingOccurrencesOfString: @"\t" withString: @" "];
-            NSArray  * lineComponents = [fileLine componentsSeparatedByString: @"DRI:"];
-            NSString * author = [lineComponents objectAtIndex: 1];
+            NSArray  * lineComponents = [fileLine componentsSeparatedByString: @"DRI: "];
+            author = [lineComponents objectAtIndex: 1];
             author = [author stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
             [attributes setObject: author
                            forKey: (NSString *)kMDItemAuthors];
-            success = YES;
         }
 
 		// Look for other data after the initial header line
 		// Find the containing line describing the file uses array
-		theRange = [fileLine rangeOfString: @"USING:" options: NSLiteralSearch range: range];
+		theRange = [fileLine rangeOfString: @"USING: " options: NSLiteralSearch range: range];
 		if (theRange.location != NSNotFound) {
 			// found it, now split line at USING:
-			fileLine = [fileLine stringByReplacingOccurrencesOfString: @"\t" withString: @" "];
-			lineComponents = [fileLine componentsSeparatedByString: @"USING:"];
+			lineComponents = [fileLine componentsSeparatedByString: @"USING: "];
             if ([lineComponents count] == 2) {
-                lineSubComponents = [lineComponents objectAtIndex: 1];
-                lineComponents = [(NSString *)lineSubComponents componentsSeparatedByString: @" "];
-                if ([lineComponents count]) {
-                    for (uses in lineComponents) {
-                        if ( ! [uses isEqualToString: @";"] &&
-                            [uses length] )
-                            [usesArray addObject: uses];
+                fileLine = [lineComponents objectAtIndex: 1];
+                // start processing lines until `;' is encountered
+                BOOL endOfUSING = NO;
+                do {
+                    lineSubComponents = [fileLine componentsSeparatedByString: @" "];
+                    if ([lineSubComponents count]) {
+                        for (uses in lineSubComponents) {
+                            endOfUSING = [uses isEqualToString: @";"];
+                            if ( ! endOfUSING && [uses length] )
+                                [usesArray addObject: uses];
+                        }
                     }
-                    [attributes setObject: usesArray
-                                   forKey: (NSString *)@"public_factor_uses"];
-                    success = YES;
-                }
+                    // possibly process more USINGS lines
+                    if (endOfUSING == NO) {
+                        i++;
+                        if (i < fileLineCount) { // in case no `;' is ever found
+                            fileLine = squeeseString([fileLines objectAtIndex:i]);
+                            [sourceContent appendString: [NSString stringWithFormat: @"%@\n", fileLine]];
+                            range.length = [fileLine length];
+                        }
+                    }
+                } while (endOfUSING == NO);
+                [attributes setObject: usesArray
+                               forKey: (NSString *)@"public_factor_uses"];
             }
         }
 
+        // Look for additional USE
+		theRange = [fileLine rangeOfString: @"USE: " options: NSLiteralSearch range: range];
+        if (theRange.location != NSNotFound) {
+			// found it, now split line at USE:
+			lineComponents = [fileLine componentsSeparatedByString: @"USE: "];
+            if ([lineComponents count] == 2) {
+                [usesArray addObject: [lineComponents objectAtIndex: 1]];
+            }
+        }
+        
 		// Parse for defining words
 		if ( assertRegex(fileLine, @"^:\\s*(\\S+)\\s+.*") ||
             assertRegex(fileLine, @"^::\\s*(\\S+)\\s+.*") ||
@@ -201,30 +228,20 @@ extract(void * thisInterface,
 		    assertRegex(fileLine, @"^\\s*(TUPLE:)\\s+(\\S+)\\s+.*") ||
 		    assertRegex(fileLine, @"^\\s*(code|CODE)\\s+(\\S+)\\s+.*") ||
 		    assertRegex(fileLine, @"^\\s*(tcode|TCODE)\\s+(\\S+)\\s+.*") ) {
-			fileLine = [fileLine stringByReplacingOccurrencesOfString: @"\t" withString: @" "];
 			NSArray  * lineComponents = [fileLine componentsSeparatedByString: @" "];
 			NSString * definition = [lineComponents objectAtIndex: 1];
 			definition = [definition stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 			[definitions addObject: definition];
 		}
 		// accumulate line
-		fileLine = [fileLine stringByReplacingOccurrencesOfString: @"\t" withString: @" "];
-		[sourceContent appendString: fileLine];
+		[sourceContent appendString: [NSString stringWithFormat: @"%@\n", fileLine]];
 	}
 
 	// store definitions into metadata
-	if ([definitions count] > 0) {
-		[attributes setObject: definitions forKey: @"public_factor_definitions"];
-		int i;
-		for(i=0; i < [definitions count]; i++) {
-			NSLog(@"Factor Def %d = %@", i, [definitions objectAtIndex: i]);
-		}
-		success = YES;
-	}
-
-	[attributes setObject: @"Factor Sourcecode File" forKey: (NSString *)kMDItemKind];
+	if ([definitions count] > 0) [attributes setObject: definitions forKey: @"public_factor_definitions"];
+    if ([usesArray count] > 0) [attributes setObject: usesArray forKey: (NSString *)@"public_factor_uses"];
+	[attributes setObject: @"Factor Source Code File" forKey: (NSString *)kMDItemKind];
 	[attributes setObject: sourceContent forKey: (id)kMDItemTextContent];
 
-end:
-	return success;
+	return YES;
 } /* extract */

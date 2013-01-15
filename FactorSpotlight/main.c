@@ -32,7 +32,7 @@
 // -----------------------------------------------------------------------------
 
 
-#define PLUGIN_ID "E7844683-056B-4E1B-83DB-68A110081C5A"
+#define PLUGIN_ID "AFE6AA5F-489F-493D-A8B9-B87203FC9931"
 
 //
 // Below is the generic glue code for all plug-ins.
