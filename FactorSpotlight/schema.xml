@@ -14,7 +14,7 @@
     </attributes>
 
     <types>
-        <type name="org.factorcode.factor-source">
+        <type name="public.factor-source">
             <note>
 				The keys that this metadata importer handles.
             </note>

@@ -6,11 +6,33 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		759C039D1698F8B50064299C /* All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 759C039E1698F8B50064299C /* Build configuration list for PBXAggregateTarget "All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				759C03A21698F8C10064299C /* PBXTargetDependency */,
+				759C03A41698F8C10064299C /* PBXTargetDependency */,
+			);
+			name = All;
+			productName = All;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		7593B1DF14A5298800034C96 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7593B1DE14A5298800034C96 /* CoreServices.framework */; };
 		7593B1E114A5298800034C96 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7593B1E014A5298800034C96 /* CoreFoundation.framework */; };
 		7593B1E314A5298800034C96 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7593B1E214A5298800034C96 /* CoreData.framework */; };
 		7593B1E514A5298800034C96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7593B1E414A5298800034C96 /* Foundation.framework */; };
+		759C039C1698F88C0064299C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D65F1014A66C1800B623E3 /* main.m */; };
+		759C03B5169B2C470064299C /* FactorSpotlightTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 759C03B4169B2C470064299C /* FactorSpotlightTest.1 */; };
+		759C03B9169B2C520064299C /* extract.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E02D3014ABA19700EF652B /* extract.m */; };
+		759C03BA169B2C580064299C /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E02D3314ABA19700EF652B /* GetMetadataForFile.m */; };
+		759C03BB169B2C5F0064299C /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E02D3D14ABA19700EF652B /* test.m */; };
+		759C03BC169B2DD50064299C /* pms.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E02D3914ABA19700EF652B /* pms.m */; };
+		759C03BD169B2E9A0064299C /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7593B1DE14A5298800034C96 /* CoreServices.framework */; };
 		75D65F0514A66C1800B623E3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D65F0414A66C1800B623E3 /* Cocoa.framework */; };
 		75D65F0F14A66C1800B623E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75D65F0D14A66C1800B623E3 /* InfoPlist.strings */; };
 		75D65F1514A66C1800B623E3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 75D65F1314A66C1800B623E3 /* Credits.rtf */; };
@@ -23,8 +45,37 @@
 		75E02D4414ABA19700EF652B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 75E02D3514ABA19700EF652B /* main.c */; };
 		75E02D4614ABA19700EF652B /* pms.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E02D3914ABA19700EF652B /* pms.m */; };
 		75E02D4714ABA19700EF652B /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 75E02D3A14ABA19700EF652B /* schema.xml */; };
-		75E02D4914ABA19700EF652B /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E02D3D14ABA19700EF652B /* test.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		759C03A11698F8C10064299C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7593B1D214A5298800034C96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7593B1DA14A5298800034C96;
+			remoteInfo = FactorSpotlight;
+		};
+		759C03A31698F8C10064299C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7593B1D214A5298800034C96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75D65F0114A66C1800B623E3;
+			remoteInfo = FactorFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		759C03AD169B2C470064299C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				759C03B5169B2C470064299C /* FactorSpotlightTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7593B1DB14A5298800034C96 /* FactorSpotlight.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FactorSpotlight.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +83,9 @@
 		7593B1E014A5298800034C96 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7593B1E214A5298800034C96 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7593B1E414A5298800034C96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		759C03AF169B2C470064299C /* FactorSpotlightTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FactorSpotlightTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		759C03B2169B2C470064299C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		759C03B4169B2C470064299C /* FactorSpotlightTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FactorSpotlightTest.1; sourceTree = "<group>"; };
 		75D65F0214A66C1800B623E3 /* FactorFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactorFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D65F0414A66C1800B623E3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		75D65F0714A66C1800B623E3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -76,6 +130,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		759C03AC169B2C470064299C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				759C03BD169B2E9A0064299C /* CoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75D65EFF14A66C1800B623E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,6 +154,7 @@
 			children = (
 				75E02D2A14ABA19700EF652B /* FactorSpotlight */,
 				75D65F0A14A66C1800B623E3 /* FactorFinderApp */,
+				759C03B1169B2C470064299C /* FactorSpotlightTest */,
 				7593B1DD14A5298800034C96 /* Frameworks */,
 				7593B1DC14A5298800034C96 /* Products */,
 			);
@@ -102,6 +165,7 @@
 			children = (
 				7593B1DB14A5298800034C96 /* FactorSpotlight.mdimporter */,
 				75D65F0214A66C1800B623E3 /* FactorFinder.app */,
+				759C03AF169B2C470064299C /* FactorSpotlightTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +181,15 @@
 				75D65F0614A66C1800B623E3 /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		759C03B1169B2C470064299C /* FactorSpotlightTest */ = {
+			isa = PBXGroup;
+			children = (
+				759C03B2169B2C470064299C /* main.c */,
+				759C03B4169B2C470064299C /* FactorSpotlightTest.1 */,
+			);
+			path = FactorSpotlightTest;
 			sourceTree = "<group>";
 		};
 		75D65F0614A66C1800B623E3 /* Other Frameworks */ = {
@@ -137,9 +210,8 @@
 				75D65F1914A66C1800B623E3 /* MainMenu.xib */,
 				75D65F0B14A66C1800B623E3 /* Supporting Files */,
 			);
-			name = FactorFinderApp;
-			path = /Sources/Projects/factor/FactorFinder/FactorFinderApp;
-			sourceTree = "<absolute>";
+			path = FactorFinderApp;
+			sourceTree = SOURCE_ROOT;
 		};
 		75D65F0B14A66C1800B623E3 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -214,6 +286,23 @@
 			productReference = 7593B1DB14A5298800034C96 /* FactorSpotlight.mdimporter */;
 			productType = "com.apple.product-type.bundle";
 		};
+		759C03AE169B2C470064299C /* FactorSpotlightTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 759C03B6169B2C470064299C /* Build configuration list for PBXNativeTarget "FactorSpotlightTest" */;
+			buildPhases = (
+				759C03AB169B2C470064299C /* Sources */,
+				759C03AC169B2C470064299C /* Frameworks */,
+				759C03AD169B2C470064299C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FactorSpotlightTest;
+			productName = FactorSpotlightTest;
+			productReference = 759C03AF169B2C470064299C /* FactorSpotlightTest */;
+			productType = "com.apple.product-type.tool";
+		};
 		75D65F0114A66C1800B623E3 /* FactorFinder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75D65F1C14A66C1800B623E3 /* Build configuration list for PBXNativeTarget "FactorFinder" */;
@@ -237,7 +326,7 @@
 		7593B1D214A5298800034C96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 7593B1D514A5298800034C96 /* Build configuration list for PBXProject "FactorFinder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -253,6 +342,8 @@
 			targets = (
 				7593B1DA14A5298800034C96 /* FactorSpotlight */,
 				75D65F0114A66C1800B623E3 /* FactorFinder */,
+				759C039D1698F8B50064299C /* All */,
+				759C03AE169B2C470064299C /* FactorSpotlightTest */,
 			);
 		};
 /* End PBXProject section */
@@ -292,7 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/bash ";
-			shellScript = "set -x\nrm -fr $INSTALL_PATH/$TARGET_NAME.mdimporter\ncp -r $TARGET_BUILD_DIR/$TARGET_NAME.mdimporter  $INSTALL_PATH/\nmdimport -d2 -g \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SRCROOT}/FactorSpotlight/test.factor\"\nmdimport -r \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"\nmdimport -d2 ${SRCROOT}/FactorSpotlight/test.factor\n";
+			shellScript = "set -x\nrm -fr $INSTALL_PATH/$TARGET_NAME.mdimporter\ncp -r $TARGET_BUILD_DIR/$TARGET_NAME.mdimporter  $INSTALL_PATH/\n#mdimport -d2 -g \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SRCROOT}/FactorSpotlight/test.factor\"\n#mdimport -r \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"\n#mdimport -d2 ${SRCROOT}/FactorSpotlight/test.factor\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -305,7 +396,17 @@
 				75E02D4214ABA19700EF652B /* GetMetadataForFile.m in Sources */,
 				75E02D4414ABA19700EF652B /* main.c in Sources */,
 				75E02D4614ABA19700EF652B /* pms.m in Sources */,
-				75E02D4914ABA19700EF652B /* test.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		759C03AB169B2C470064299C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				759C03B9169B2C520064299C /* extract.m in Sources */,
+				759C03BB169B2C5F0064299C /* test.m in Sources */,
+				759C03BC169B2DD50064299C /* pms.m in Sources */,
+				759C03BA169B2C580064299C /* GetMetadataForFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,11 +414,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759C039C1698F88C0064299C /* main.m in Sources */,
 				75D65F1814A66C1800B623E3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		759C03A21698F8C10064299C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7593B1DA14A5298800034C96 /* FactorSpotlight */;
+			targetProxy = 759C03A11698F8C10064299C /* PBXContainerItemProxy */;
+		};
+		759C03A41698F8C10064299C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75D65F0114A66C1800B623E3 /* FactorFinder */;
+			targetProxy = 759C03A31698F8C10064299C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		75D65F0D14A66C1800B623E3 /* InfoPlist.strings */ = {
@@ -382,8 +497,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -400,8 +515,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
@@ -410,12 +525,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
 			};
@@ -426,14 +541,61 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Release;
+		};
+		759C039F1698F8B50064299C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		759C03A01698F8B50064299C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		759C03B7169B2C470064299C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		759C03B8169B2C470064299C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -441,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FactorFinderApp/FactorFinder-Prefix.pch";
 				INFOPLIST_FILE = "FactorFinderApp/FactorFinder-Info.plist";
@@ -453,6 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FactorFinderApp/FactorFinder-Prefix.pch";
 				INFOPLIST_FILE = "FactorFinderApp/FactorFinder-Info.plist";
@@ -478,6 +642,24 @@
 			buildConfigurations = (
 				7593B1F814A5298800034C96 /* Debug */,
 				7593B1F914A5298800034C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		759C039E1698F8B50064299C /* Build configuration list for PBXAggregateTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				759C039F1698F8B50064299C /* Debug */,
+				759C03A01698F8B50064299C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		759C03B6169B2C470064299C /* Build configuration list for PBXNativeTarget "FactorSpotlightTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				759C03B7169B2C470064299C /* Debug */,
+				759C03B8169B2C470064299C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
