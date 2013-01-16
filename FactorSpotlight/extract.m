@@ -79,6 +79,9 @@ extract(void * thisInterface,
 	NSArray           * lineComponents;
 	NSArray           * lineSubComponents;
 	NSMutableArray    * definitions = [NSMutableArray arrayWithCapacity: 128];
+	NSMutableArray    * tuples = [NSMutableArray arrayWithCapacity: 128];
+	NSMutableArray    * symbols = [NSMutableArray arrayWithCapacity: 128];
+	NSMutableArray    * generics = [NSMutableArray arrayWithCapacity: 128];
 	NSMutableArray    * usesArray = [NSMutableArray arrayWithCapacity: 128];
 	NSMutableString   * sourceContent = [NSMutableString stringWithCapacity: 4096];
 
@@ -224,23 +227,46 @@ extract(void * thisInterface,
 		if ( assertRegex(fileLine, @"^:\\s*(\\S+)\\s+.*") ||
             assertRegex(fileLine, @"^::\\s*(\\S+)\\s+.*") ||
             assertRegex(fileLine, @"^M:\\s*(\\S+)\\s+.*") ||
-            assertRegex(fileLine, @"^M::\\s*(\\S+)\\s+.*") ||
-		    assertRegex(fileLine, @"^\\s*(SYMBOL:)\\s+(\\S+)\\s+.*") ||
-		    assertRegex(fileLine, @"^\\s*(TUPLE:)\\s+(\\S+)\\s+.*")) {
+            assertRegex(fileLine, @"^M::\\s*(\\S+)\\s+.*")) {
 			NSArray  * lineComponents = [fileLine componentsSeparatedByString: @" "];
 			NSString * definition = [lineComponents objectAtIndex: 1];
 			definition = [definition stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 			[definitions addObject: definition];
 		}
-		// accumulate line
+
+        if ( assertRegex(fileLine, @"^\\s*(TUPLE:)\\s+(\\S+)\\s+.*")) {
+			NSArray  * lineComponents = [fileLine componentsSeparatedByString: @" "];
+			NSString * tuple = [lineComponents objectAtIndex: 1];
+			tuple = [tuple stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+			[tuples addObject: tuple];
+		}
+
+        if ( assertRegex(fileLine, @"^\\s*(SYMBOL:)\\s+(\\S+)\\s+.*")) {
+			NSArray  * lineComponents = [fileLine componentsSeparatedByString: @" "];
+			NSString * symbol = [lineComponents objectAtIndex: 1];
+			symbol = [symbol stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+			[symbols addObject: symbol];
+		}
+
+        if ( assertRegex(fileLine, @"^\\s*(GENERIC:)\\s+(\\S+)\\s+.*")) {
+			NSArray  * lineComponents = [fileLine componentsSeparatedByString: @" "];
+			NSString * generic = [lineComponents objectAtIndex: 1];
+			generic = [generic stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+			[generics addObject: generic];
+		}
+        
+        // accumulate line
 		[sourceContent appendString: [NSString stringWithFormat: @"%@\n", fileLine]];
 	}
 
 	// store definitions into metadata
 	if ([definitions count] > 0) [attributes setObject: definitions forKey: @"public_factor_definitions"];
+	if ([tuples count] > 0) [attributes setObject: tuples forKey: @"public_factor_tuples"];
+	if ([symbols count] > 0) [attributes setObject: symbols forKey: @"public_factor_symbols"];
     if ([usesArray count] > 0) [attributes setObject: usesArray forKey: (NSString *)@"public_factor_uses"];
 	[attributes setObject: @"Factor Source Code File" forKey: (NSString *)kMDItemKind];
 	[attributes setObject: sourceContent forKey: (id)kMDItemTextContent];
+    [attributes setObject:[NSDate date] forKey:(NSString *)kMDItemAttributeChangeDate];
 
 	return YES;
 } /* extract */
