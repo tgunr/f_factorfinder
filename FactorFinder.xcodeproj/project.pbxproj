@@ -210,6 +210,7 @@
 		75E02D4A14ABA21E00EF652B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				75E02D3214ABA19700EF652B /* FactorSpotlight-Info.plist */,
 				75E02D2B14ABA19700EF652B /* InfoPlist.strings */,
 				75E02D2D14ABA19700EF652B /* schema.strings */,
 				75E02D3A14ABA19700EF652B /* schema.xml */,
@@ -221,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				75E02D3114ABA19700EF652B /* FactorImporter-Prefix.pch */,
-				75E02D3214ABA19700EF652B /* FactorSpotlight-Info.plist */,
 				75E02D3414ABA19700EF652B /* Importer Read Me.txt */,
 				75E02D3B14ABA19700EF652B /* test.factor */,
 			);
