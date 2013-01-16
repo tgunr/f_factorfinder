@@ -225,9 +225,7 @@ extract(void * thisInterface,
             assertRegex(fileLine, @"^::\\s*(\\S+)\\s+.*") ||
             assertRegex(fileLine, @"^M:\\s*(\\S+)\\s+.*") ||
             assertRegex(fileLine, @"^M::\\s*(\\S+)\\s+.*") ||
-		    assertRegex(fileLine, @"^\\s*(TUPLE:)\\s+(\\S+)\\s+.*") ||
-		    assertRegex(fileLine, @"^\\s*(code|CODE)\\s+(\\S+)\\s+.*") ||
-		    assertRegex(fileLine, @"^\\s*(tcode|TCODE)\\s+(\\S+)\\s+.*") ) {
+		    assertRegex(fileLine, @"^\\s*(TUPLE:)\\s+(\\S+)\\s+.*")) {
 			NSArray  * lineComponents = [fileLine componentsSeparatedByString: @" "];
 			NSString * definition = [lineComponents objectAtIndex: 1];
 			definition = [definition stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];

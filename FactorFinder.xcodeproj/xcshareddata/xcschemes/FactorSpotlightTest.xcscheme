@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "75D65F0114A66C1800B623E3"
-               BuildableName = "FactorFinder.app"
-               BlueprintName = "FactorFinder"
+               BlueprintIdentifier = "759C03AE169B2C470064299C"
+               BuildableName = "FactorSpotlightTest"
+               BlueprintName = "FactorSpotlightTest"
                ReferencedContainer = "container:FactorFinder.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -24,7 +24,7 @@
    </BuildAction>
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
@@ -32,16 +32,16 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75D65F0114A66C1800B623E3"
-            BuildableName = "FactorFinder.app"
-            BlueprintName = "FactorFinder"
+            BlueprintIdentifier = "759C03AE169B2C470064299C"
+            BuildableName = "FactorSpotlightTest"
+            BlueprintName = "FactorSpotlightTest"
             ReferencedContainer = "container:FactorFinder.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
@@ -51,15 +51,19 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75D65F0114A66C1800B623E3"
-            BuildableName = "FactorFinder.app"
-            BlueprintName = "FactorFinder"
+            BlueprintIdentifier = "759C03AE169B2C470064299C"
+            BuildableName = "FactorSpotlightTest"
+            BlueprintName = "FactorSpotlightTest"
             ReferencedContainer = "container:FactorFinder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "$(SRCROOT)/FactorFinder/test.factor"
+            argument = "/Users/davec/factor/work/davec"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Sources/FactorWork/FactorFinder/FactorSpotlight"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -75,9 +79,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75D65F0114A66C1800B623E3"
-            BuildableName = "FactorFinder.app"
-            BlueprintName = "FactorFinder"
+            BlueprintIdentifier = "759C03AE169B2C470064299C"
+            BuildableName = "FactorSpotlightTest"
+            BlueprintName = "FactorSpotlightTest"
             ReferencedContainer = "container:FactorFinder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
