@@ -265,8 +265,10 @@ extract(void * thisInterface,
 	if ([symbols count] > 0) [attributes setObject: symbols forKey: @"public_factor_symbols"];
     if ([usesArray count] > 0) [attributes setObject: usesArray forKey: (NSString *)@"public_factor_uses"];
 	[attributes setObject: @"Factor Source Code File" forKey: (NSString *)kMDItemKind];
-	[attributes setObject: sourceContent forKey: (id)kMDItemTextContent];
-    [attributes setObject:[NSDate date] forKey:(NSString *)kMDItemAttributeChangeDate];
+	[attributes setObject: sourceContent forKey: kMDItemTextContent];
+    [attributes setObject:[NSDate date] forKey: kMDItemAttributeChangeDate];
+    [attributes setObject:pathToFile forKey: kMDItemPath];
+    
 
 	return YES;
 } /* extract */
