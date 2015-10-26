@@ -22,6 +22,7 @@ Boolean GetMetadataForFile(void* thisInterface,
                            CFStringRef pathToFile)
 {
     @autoreleasepool {
+        NSLog(@"GetMetaDataForFile");
         return extract(thisInterface, (__bridge  NSMutableDictionary *)attributes, (__bridge  NSString *)contentTypeUTI, (__bridge  NSString *)pathToFile);
     }
 }

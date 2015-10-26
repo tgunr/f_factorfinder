@@ -283,7 +283,7 @@
 		7593B1D214A5298800034C96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = 7593B1D514A5298800034C96 /* Build configuration list for PBXProject "FactorFinder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -337,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/bash ";
-			shellScript = "set -x\nrm -fr $INSTALL_PATH/$TARGET_NAME.mdimporter\ncp -r $TARGET_BUILD_DIR/$TARGET_NAME.mdimporter  $INSTALL_PATH/\n#mdimport -d2 -g \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SRCROOT}/FactorSpotlight/test.factor\"\n#mdimport -r \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"\n#mdimport -d2 ${SRCROOT}/FactorSpotlight/test.factor\n";
+			shellScript = "set -x\nrm -fr $INSTALL_PATH/$PRODUCT_NAME.mdimporter\ncp -r $TARGET_BUILD_DIR/$PRODUCT_NAME.mdimporter  $INSTALL_PATH/\n#mdimport -d2 -g \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SRCROOT}/FactorSpotlight/test.factor\"\n#mdimport -r \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"\n#mdimport -d2 ${SRCROOT}/FactorSpotlight/test.factor\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -417,6 +417,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -450,12 +451,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer: Dave Carlton (33TC7NSLLR)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
@@ -467,12 +469,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer: Dave Carlton (33TC7NSLLR)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
@@ -496,7 +499,6 @@
 		759C03B7169B2C470064299C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -513,7 +515,6 @@
 		759C03B8169B2C470064299C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -534,6 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FactorFinderApp/FactorFinder-Prefix.pch";
 				INFOPLIST_FILE = "FactorFinderApp/FactorFinder-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.factor.finder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -547,6 +549,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FactorFinderApp/FactorFinder-Prefix.pch";
 				INFOPLIST_FILE = "FactorFinderApp/FactorFinder-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.factor.finder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
