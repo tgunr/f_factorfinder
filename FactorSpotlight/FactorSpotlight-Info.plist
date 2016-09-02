@@ -7,19 +7,20 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>MDImporter</string>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>public.source-file</string>
-				<string>public.factor-source</string>
-			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>factor</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Factor Source Code File</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.source-file</string>
+				<string>public.factor-source</string>
+				<string>dyn.ah62d4rv4ge80q2pdsv11e</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -27,7 +28,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>org.factorcode.spotlight</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -62,10 +63,10 @@
 				<string>public.text</string>
 				<string>public.source-code</string>
 			</array>
-			<key>UTTypeIdentifier</key>
-			<string>public.factor-source</string>
 			<key>UTTypeDescription</key>
 			<string>Factor Source Code File</string>
+			<key>UTTypeIdentifier</key>
+			<string>public.factor-source</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

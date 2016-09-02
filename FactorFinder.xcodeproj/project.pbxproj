@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				750FD5011BDD8022004E2142 /* PBXTargetDependency */,
 				759C03A21698F8C10064299C /* PBXTargetDependency */,
 				759C03A41698F8C10064299C /* PBXTargetDependency */,
 			);
@@ -43,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		750FD5001BDD8022004E2142 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7593B1D214A5298800034C96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 759C03AE169B2C470064299C;
+			remoteInfo = FactorSpotlightTest;
+		};
 		759C03A11698F8C10064299C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7593B1D214A5298800034C96 /* Project object */;
@@ -83,9 +91,6 @@
 		759C03B4169B2C470064299C /* FactorSpotlightTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FactorSpotlightTest.1; sourceTree = "<group>"; };
 		75D65F0214A66C1800B623E3 /* FactorFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactorFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D65F0414A66C1800B623E3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		75D65F0714A66C1800B623E3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		75D65F0814A66C1800B623E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		75D65F0914A66C1800B623E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75E02D2C14ABA19700EF652B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75E02D2E14ABA19700EF652B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
 		75E02D2F14ABA19700EF652B /* extract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extract.h; sourceTree = "<group>"; };
@@ -164,7 +169,6 @@
 				7593B1E214A5298800034C96 /* CoreData.framework */,
 				7593B1E414A5298800034C96 /* Foundation.framework */,
 				75D65F0414A66C1800B623E3 /* Cocoa.framework */,
-				75D65F0614A66C1800B623E3 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,16 +180,6 @@
 				759C03B4169B2C470064299C /* FactorSpotlightTest.1 */,
 			);
 			path = FactorSpotlightTest;
-			sourceTree = "<group>";
-		};
-		75D65F0614A66C1800B623E3 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				75D65F0714A66C1800B623E3 /* AppKit.framework */,
-				75D65F0814A66C1800B623E3 /* CoreData.framework */,
-				75D65F0914A66C1800B623E3 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		75E02D2A14ABA19700EF652B /* FactorSpotlight */ = {
@@ -289,7 +283,7 @@
 		7593B1D214A5298800034C96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = 7593B1D514A5298800034C96 /* Build configuration list for PBXProject "FactorFinder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -343,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/bash ";
-			shellScript = "set -x\nrm -fr $INSTALL_PATH/$TARGET_NAME.mdimporter\ncp -r $TARGET_BUILD_DIR/$TARGET_NAME.mdimporter  $INSTALL_PATH/\n#mdimport -d2 -g \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SRCROOT}/FactorSpotlight/test.factor\"\n#mdimport -r \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"\n#mdimport -d2 ${SRCROOT}/FactorSpotlight/test.factor\n";
+			shellScript = "set -x\nrm -fr $INSTALL_PATH/$PRODUCT_NAME.mdimporter\ncp -r $TARGET_BUILD_DIR/$PRODUCT_NAME.mdimporter  $INSTALL_PATH/\n#mdimport -d2 -g \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SRCROOT}/FactorSpotlight/test.factor\"\n#mdimport -r \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"\n#mdimport -d2 ${SRCROOT}/FactorSpotlight/test.factor\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -380,6 +374,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		750FD5011BDD8022004E2142 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 759C03AE169B2C470064299C /* FactorSpotlightTest */;
+			targetProxy = 750FD5001BDD8022004E2142 /* PBXContainerItemProxy */;
+		};
 		759C03A21698F8C10064299C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7593B1DA14A5298800034C96 /* FactorSpotlight */;
@@ -415,42 +414,35 @@
 		7593B1F514A5298800034C96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		7593B1F614A5298800034C96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -459,11 +451,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
@@ -475,11 +469,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
@@ -503,7 +499,6 @@
 		759C03B7169B2C470064299C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -520,7 +515,6 @@
 		759C03B8169B2C470064299C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -541,6 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FactorFinderApp/FactorFinder-Prefix.pch";
 				INFOPLIST_FILE = "FactorFinderApp/FactorFinder-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.factor.finder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -554,6 +549,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FactorFinderApp/FactorFinder-Prefix.pch";
 				INFOPLIST_FILE = "FactorFinderApp/FactorFinder-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.factorcode.factor.finder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
