@@ -7,20 +7,14 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>factor</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Factor Source Code File</string>
-			<key>CFBundleTypeRole</key>
-			<string>MDImporter</string>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>public.source-file</string>
-				<string>public.factor-source</string>
-				<string>dyn.ah62d4rv4ge80q2pdsv11e</string>
-			</array>
+			<string>Factor Source File</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -28,7 +22,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>org.factorcode.Factor.spotlight</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -41,14 +35,14 @@
 	<string>NO</string>
 	<key>CFPlugInFactories</key>
 	<dict>
-		<key>AFE6AA5F-489F-493D-A8B9-B87203FC9931</key>
+		<key>E7844683-056B-4E1B-83DB-68A110081C5A</key>
 		<string>MetadataImporterPluginFactory</string>
 	</dict>
 	<key>CFPlugInTypes</key>
 	<dict>
 		<key>8B08C4BF-415B-11D8-B3F9-0003936726FC</key>
 		<array>
-			<string>AFE6AA5F-489F-493D-A8B9-B87203FC9931</string>
+			<string>E7844683-056B-4E1B-83DB-68A110081C5A</string>
 		</array>
 	</dict>
 	<key>CFPlugInUnloadFunction</key>
@@ -63,10 +57,31 @@
 				<string>public.text</string>
 				<string>public.source-code</string>
 			</array>
+			<key>UTTypeIdentifier</key>
+			<string>org.factorcode.factor-source</string>
 			<key>UTTypeDescription</key>
 			<string>Factor Source Code File</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>factor</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+				<string>public.source-code</string>
+			</array>
 			<key>UTTypeIdentifier</key>
-			<string>public.factor-source</string>
+			<string>org.factorcode.factor-source</string>
+			<key>UTTypeDescription</key>
+			<string>Factor Source Code File</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

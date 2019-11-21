@@ -21,7 +21,7 @@ void processFolder(NSString * path) {
 		while ((file = [dirEnumerator nextObject])) {
 			file = [path stringByAppendingPathComponent:file];
             if ([file hasSuffix:@".factor"]) {
-                NSLog(@"FactorSpotlight testing: %@", file);
+                NSLog(@"LibSpotlight testing: %@", file);
                 processFolder(file);
             }
 		}
