@@ -34,20 +34,26 @@ folder
 mdimport -r $HOME/Library/Spotlight/FactorSpotlight.mdimporter
 ```
 5. Verify success
-``` % mdimport -A|grep factor
+```
+mdimport -A|grep factor
 'public_factor_definitions'		'Definitions created in Factor file'		'(null)'		'(null)'
 'public_factor_uses'		'Vocabularies used by Factor file'
 '(null)'		'(null)'
 ```
 6. If you have specific folders containing Factor source files
 (.factor)
-```mdimport -i path/to/folder/containing/factor```
+```
+mdimport -i path/to/folder/containing/factor
+```
 7. Wait for spotlight to index, check by opening spoting and looking
 at index progress
 8. Verify by checking one of your file.factor files
-```mdls path/to/file.factor```
+```
+mdls path/to/file.factor
+```
 You should see references to *public_factor_definitions* and
 *public_factor_uses*
+
 9. Try finding some files containing the defintion "hex"
 ```
 mdfind 'public_factor_definitions == "hex"'
