@@ -25,6 +25,8 @@
                 kMDItemAuthors
                 kMDItemKind
                 kMDItemTextContent
+                kMDItemContentType
+                kMDItemContentTypeTree
                 public_factor_uses
                 public_factor_definitions
             </allattrs>
@@ -35,6 +37,8 @@
                 kMDItemAuthors
                 kMDItemKind
                 kMDItemTextContent
+                kMDItemContentType
+                kMDItemContentTypeTree
                 public_factor_uses
                 public_factor_definitions
             </displayattrs>

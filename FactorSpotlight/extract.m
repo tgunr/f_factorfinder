@@ -222,8 +222,15 @@ extract(void * thisInterface,
 		success = YES;
 	}
 
-	[attributes setObject: @"Factor Sourcecode File" forKey: (NSString *)kMDItemKind];
+    [attributes setObject: @"Factor Sourcecode File" forKey: (NSString *)kMDItemKind];
 	[attributes setObject: sourceContent forKey: (id)kMDItemTextContent];
+    [attributes setObject: @"public.factor-source" forKey: (NSString *)kMDItemContentType];
+    [attributes setObject: sourceContent forKey: (id)kMDItemTextContent];
+    NSMutableArray *typeTree = [attributes objectForKey: (NSString *)kMDItemContentTypeTree];
+    [typeTree addObject:@"public-source"];
+    [typeTree addObject:@"public-text"];
+    [attributes setObject: typeTree forKey: (id)kMDItemContentTypeTree];
+
 
 end:
 	return success;
