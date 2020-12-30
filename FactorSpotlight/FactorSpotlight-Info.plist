@@ -7,14 +7,14 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>MDImporter</string>
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>factor</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Factor Source File</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -28,7 +28,7 @@
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>
@@ -57,10 +57,10 @@
 				<string>public.text</string>
 				<string>public.source-code</string>
 			</array>
-			<key>UTTypeIdentifier</key>
-			<string>org.factorcode.factor-source</string>
 			<key>UTTypeDescription</key>
 			<string>Factor Source Code File</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.factorcode.factor-source</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -78,10 +78,10 @@
 				<string>public.text</string>
 				<string>public.source-code</string>
 			</array>
-			<key>UTTypeIdentifier</key>
-			<string>org.factorcode.factor-source</string>
 			<key>UTTypeDescription</key>
 			<string>Factor Source Code File</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.factorcode.factor-source</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
