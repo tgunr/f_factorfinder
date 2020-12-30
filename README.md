@@ -64,8 +64,7 @@ mdfind 'public_factor_definitions == "hex"'
 /Volumes/Home/davec/ownCloud/Sources/factor-clean/extra/toml/toml.factor
 ```
 
-### Finder Demo
-https://dsc.cloud/8e6a8d/1609337198.gif
+[Finder Demo](https://dsc.cloud/8e6a8d/1609337198.gif)
 
 ## Build
 Building the Xcode project will install the binary into the
