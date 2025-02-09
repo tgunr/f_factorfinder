@@ -240,7 +240,7 @@
 				LastUpgradeCheck = 0420;
 				TargetAttributes = {
 					7593B1DA14A5298800034C96 = {
-						DevelopmentTeam = BG856GB4D8;
+						DevelopmentTeam = NL3267E99V;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -417,7 +417,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BG856GB4D8;
+				DEVELOPMENT_TEAM = NL3267E99V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
@@ -437,7 +437,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BG856GB4D8;
+				DEVELOPMENT_TEAM = NL3267E99V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "FactorSpotlight/FactorSpotlight-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Spotlight";
