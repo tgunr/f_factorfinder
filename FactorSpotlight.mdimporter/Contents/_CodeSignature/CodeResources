@@ -31,10 +31,6 @@
 	<dict>
 		<key>Resources/en.lproj/InfoPlist.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			MiLKDDnrUKr4EmuvhS5VQwxHGK8=
-			</data>
 			<key>hash2</key>
 			<data>
 			Oc8u4Ht7Mz58F50L9NeYpbcq9qTlhPUeZCcDu/pPyCg=
@@ -44,10 +40,6 @@
 		</dict>
 		<key>Resources/en.lproj/schema.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			7cpuntSbdIj2iVCo66/eMHDzVGI=
-			</data>
 			<key>hash2</key>
 			<data>
 			t8F//gckPd5799zTKgTNgtzFK/sTMoO6FlbxmBT7bwc=
@@ -57,10 +49,6 @@
 		</dict>
 		<key>Resources/schema.xml</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4Sx0YBZUVWWmF8jK0c0MDX7jCiA=
-			</data>
 			<key>hash2</key>
 			<data>
 			gMnJT5LWjCPQeg2FXVANBlc4VlWaYQu+1HZVG/DVayc=

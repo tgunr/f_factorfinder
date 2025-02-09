@@ -9,20 +9,20 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>factor</string>
-			</array>
 			<key>CFBundleTypeName</key>
 			<string>Factor Source File</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>factor</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>FactorSpotlight</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.factorcode.Factor.spotlight</string>
+	<string>org.factorcode.mdimporter.FactorSpotlight</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -31,6 +31,8 @@
 	<array>
 		<string>MacOSX</string>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>3</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>
@@ -66,7 +68,7 @@
 	<key>DTXcodeBuild</key>
 	<string>14C18</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.14.6</string>
+	<string>12.0</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2011 PolyMicro Systems. All rights reserved.</string>
 	<key>UTExportedTypeDeclarations</key>
